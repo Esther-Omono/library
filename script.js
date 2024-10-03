@@ -33,9 +33,9 @@ function displayBooks() {
 
         bookCard.innerHTML = `
         <h3 class="book-title">${book.title}</h3>
-        <p>Author: ${book.author}</p>
-        <p>Pages: ${book.pages}</p>
-        <p>Status: ${book.isRead ? 'Read' : 'Not read yet'}</p>
+        <p class="book-author"><span>Author:</span> ${book.author}</p>
+        <p class="book-pages"><span>Pages:</span> ${book.pages}</p>
+        <p class="book-status"><span>Status:</span> ${book.isRead ? 'Read' : 'Not read yet'}</p>
         <button class="toggle-read" data-index="${index}">Toggle Read Status</button>
         <button class="remove-book" data-index="${index}">Remove</button>
     `;
