@@ -25,8 +25,10 @@ body {
     padding: 20px;
 }
 
-#newBook {
-    padding: 10px 20px;
+#newBook,
+#newBookForm button[type="submit"],
+#newBookForm button[type="button"] {
+    padding: 10px 25px;
     margin: 20px 20px;
     font-size: 14px;
     border-radius: 15px;
@@ -38,7 +40,8 @@ body {
 }
 
 #newBook:hover,
-.toggle-read:hover {
+.toggle-read:hover,
+#newBookForm button[type="submit"]:hover {
     background-color: var(--accent-hover);
     color: var(--text);
 }
@@ -96,10 +99,85 @@ body {
     background-color: var(--accent);
 }
 
-.remove-book {
+.remove-book,
+#newBookForm button[type="button"] {
     background-color: var(--delete);
 }
 
-.remove-book:hover {
+.remove-book:hover,
+#newBookForm button[type="button"]:hover {
     background-color: var(--delete-hover);
+}
+
+/* Styling for the Dialog - Form */
+dialog {
+    border: 2px solid var(--accent);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+#newBookForm label {
+    display: block;
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    color: var(--text);
+    font-weight: 700;
+    text-align: left;
+}
+
+#newBookForm input:focus {
+    outline: 2px solid var(--accent);
+}
+
+#newBookForm input[type="text"],
+#newBookForm input[type="number"] {
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#newBookForm input[type="checkbox"] {
+    -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
+    -moz-appearance: none; /* Remove default appearance for Firefox */
+    appearance: none; /* Remove default appearance for all browsers */
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+  
+#newBookForm input[type="checkbox"]:checked {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+  
+#newBookForm input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    left: 1px;
+    top: -5px;
+    color: var(--primary);
+    font-size: 18px;
 }
